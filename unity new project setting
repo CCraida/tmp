@@ -3,3 +3,6 @@ fix default cube colar
   
 IndexOutOfRangeException by vscode
   https://forum.unity.com/threads/unity-start-error.820125/
+  
+vscodeでコード補間がされなくなった
+  https://gomafrontier.com/unity/1936
