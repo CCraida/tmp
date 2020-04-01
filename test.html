@@ -1,37 +1,94 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Designer | Y\mi Tamura</title>
-    <meta name="description" content="京都で活動するフリーランスウェブデザイナー、田村優実のポートフォリオサイトです。">
-    <meta name="keywords" content="Yumi Tamura,Designer,web,kyoto">
-    <meta name="author" content="Yumi Tamura">
     <meta charset="utf-8">
+    <title>Contact | Yumi Tamura</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
 </head>
 
 <body>
-    <header>    
-        <h1 style="color:red;">YUMI TAMURA</h1>
-        <h2 style="color:blue;">I am a web designer</h2>
+
+    <!-- ここからheader -->
+    <header>
+        <h1><a href="html-rensyu_01.html">Yumi Tamura</a></h1>
+        <h2>Designer</h2>
         <nav>
             <ul>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#"></a>GALLERY</a></li>
-                <li><a href="#"></a>CONTACT</a></li>
+                <li><a href="rensyu01_about.html">ABOUT</a></li>
+                <li><a href="rensyu01_gellery.html">GELLERY</a></li>
+                <li><a href="rensyu01_contact.html">CONTACT</a></li>
             </ul>
         </nav>
     </header>
-    <div>
-        <img src="images/mainimg.jpg" alt="A bettry ">
-    </div>
+    <!-- ここまでheader -->
 
     <div>
-        <h3>わたしにできること</h3>
+        <section>
+            <h1>CONTACT</h1>
+            <!-- ここからフォーム -->
+            <form>
+                <fieldset>
+                    <legend>基本情報</legend>
+                    <label for="name">名前</label>
+                    <input id="name" type="text" name="名前">
 
-        web design
+                    <label for="mail">メールアドレス</label>
+                    <input id="mail" type="text" name="メールアドレス">
+
+                    <label>区分</label>
+                    <input id="parsonal" type="radio" name="区分" value="個人の方">
+                    <label for="parsonal">個人の方</label>
+
+                    <input id="corpor" type="radio" name="区分" value="企業の方">
+                    <label for="corpor">企業の方</label>
+                    
+                </fieldset>
+                
+                <fieldset>
+                    <legend>お問い合わせ本文</legend>
+
+                    <label for="category">お問い合わせの種類</label>
+                    <select id="category" name="お問い合わせの種類">
+                        <optgroup label="業務について">
+                            <option>デザイン業務について</option>
+                            <option>講師業について</option>
+                            <option>経歴について</option>
+                        </optgroup>
+
+                        <optgroup label="制作について">
+                            <option>価格について</option>
+                            <option　selected="selected">納期について</option>
+                            <option>支払い方法について</option>
+                        </optgroup>
+                    </select>
+                    
+
+                    <label for="main">本文</label>
+                    <textarea id="main" name="本文" placeholder="ここに本文を入力してください"></textarea>
+                
+                    <label>確認</label>
+                    <input id ="yes" type="checkbox" name="確認" value="規約に同意します">
+                    <label for="yes">規約に同意します</label>
+                
+                </fieldset>
+
+                <input type="submit" value="そうしん">
+                <input type="reset">
+            </form>
+
+            <!-- ここまでフォーム -->
+
+        </section>
     </div>
+    <!-- ここまでコンテンツ -->
 
-    <footer></footer>
+    <!-- ここからフッター -->
+    <footer>
+        <p>&copy; 2015 Yumi Tamura</p>
+    </footer>
+    <!-- ここまでフッター -->
 </body>
 
 </html>
+
