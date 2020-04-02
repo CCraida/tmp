@@ -1,94 +1,207 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<title>About | Yumi Tamura</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="all">
+	</head>
 
-<head>
-    <meta charset="utf-8">
-    <title>Contact | Yumi Tamura</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
-</head>
+	<body>
 
-<body>
+		<!-- ここからheader -->
+		<header>
+		<h1><a href="html-rensyu_01.html">Yumi Tamura</a></h1>
+			<h2>Designer</h2>
 
-    <!-- ここからheader -->
-    <header>
-        <h1><a href="html-rensyu_01.html">Yumi Tamura</a></h1>
-        <h2>Designer</h2>
-        <nav>
-            <ul>
-                <li><a href="rensyu01_about.html">ABOUT</a></li>
-                <li><a href="rensyu01_gellery.html">GELLERY</a></li>
-                <li><a href="rensyu01_contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- ここまでheader -->
+			<nav>
+				<ul>
+					<li><a href="rensyu01_about.html">ABOUT</a></li>
+					<li><a href="rensyu01_gellery.html">GELLERY</a></li>
+					<li><a href="rensyu01_contact.html">CONTACT</a></li>
+				</ul>
+			</nav>
 
-    <div>
-        <section>
-            <h1>CONTACT</h1>
-            <!-- ここからフォーム -->
-            <form>
-                <fieldset>
-                    <legend>基本情報</legend>
-                    <label for="name">名前</label>
-                    <input id="name" type="text" name="名前">
+		</header>
+		<!-- ここまでheader -->
 
-                    <label for="mail">メールアドレス</label>
-                    <input id="mail" type="text" name="メールアドレス">
 
-                    <label>区分</label>
-                    <input id="parsonal" type="radio" name="区分" value="個人の方">
-                    <label for="parsonal">個人の方</label>
+		<!-- ここからコンテンツ -->
+		<div>
 
-                    <input id="corpor" type="radio" name="区分" value="企業の方">
-                    <label for="corpor">企業の方</label>
-                    
-                </fieldset>
-                
-                <fieldset>
-                    <legend>お問い合わせ本文</legend>
+			<section>
+				<h1>ABOUT</h1>
+				<img src="images/me.jpg" alt="A BETTER WAY TO HANDLE WEBSITES."/>
+				<header>
+					<h2>YUMI TAMURA</h2>
+					<p>大学を1年間休学し、ウェブデザインの勉強を開始。<br>大学卒業後、23歳で独立し、フリーランスに。</p>
+				</header>
+			</section>
+			
+			<section id="skill">
 
-                    <label for="category">お問い合わせの種類</label>
-                    <select id="category" name="お問い合わせの種類">
-                        <optgroup label="業務について">
-                            <option>デザイン業務について</option>
-                            <option>講師業について</option>
-                            <option>経歴について</option>
-                        </optgroup>
+				<!-- ここからテーブル（仕事メニュー一覧） -->
+				<table>
+					<caption>仕事メニュー一覧
+						<details>
+							<summary>列の構成</summary>
+							<p>これは列の構成です</p>
+						</details>
+					</caption>
 
-                        <optgroup label="制作について">
-                            <option>価格について</option>
-                            <option　selected="selected">納期について</option>
-                            <option>支払い方法について</option>
-                        </optgroup>
-                    </select>
-                    
+					<thead>
+					<tr>
+						<th scope="col">出来ること</th>
+						<th scope="col">詳細</th>
+						<th scope="col">価格</th>
+					</tr>
+					</thead>
 
-                    <label for="main">本文</label>
-                    <textarea id="main" name="本文" placeholder="ここに本文を入力してください"></textarea>
-                
-                    <label>確認</label>
-                    <input id ="yes" type="checkbox" name="確認" value="規約に同意します">
-                    <label for="yes">規約に同意します</label>
-                
-                </fieldset>
+					<tfoot>
+						<tr>
+							<td colspan="3">2014年現在の情報です2014年現在の情報です2014年現在の情報です2014年現在の情報です</td>
+						</tr>
+					</tfoot>
 
-                <input type="submit" value="そうしん">
-                <input type="reset">
-            </form>
+					<tbody>
+					<tr>
+						<th scope="row" rowspan="2">Webデザイン</th>
+						<td>html css</td>
+						<td>50000</td>
+					</tr>
+						<td>javascript</td>
+						<td>110000</td>
+				</tr
+					<tr>
+						<th scope="row">ロゴ制作</th>
+						<td>企業やウェブサイトのロゴ制作</td>
+						<td>50000</td>
 
-            <!-- ここまでフォーム -->
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
 
-        </section>
-    </div>
-    <!-- ここまでコンテンツ -->
+					</tr>
+					</tbody>
 
-    <!-- ここからフッター -->
-    <footer>
-        <p>&copy; 2015 Yumi Tamura</p>
-    </footer>
-    <!-- ここまでフッター -->
-</body>
+				</table>
+				<!-- ここまでテーブル（仕事メニュー一覧） -->
 
+			</section>
+
+
+
+
+
+			<section id="profile">
+
+				<!-- ここからテーブル（実績） -->
+
+				<!-- ここまでテーブル（実績） -->
+
+			</section>
+
+
+		</div>
+		<!-- ここまでコンテンツ -->
+
+		<!-- ここからフッター -->
+		<footer>
+
+			<a href="https://twitter.com/yummys01c" target="_blank">
+				<img src="images/icon_twitter.png" alt="twitter" width="30"/></a>
+
+			<a href="https://www.facebook.com/yumi.tamura1" target="_blank">
+				<img src="images/icon_facebook.png" alt="facebook" width="30"/></a><br><br>
+
+			<p>&copy; 2015 Yumi Tamura</p>
+
+		</footer>
+		<!-- ここまでフッター -->
+	</body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Fonts.inc</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<div id="wrapper">
+
+		<header class="clearfix">
+
+			<h1>Fonts.inc</h1>
+
+			<nav>
+				<ul class="clearfix">
+					<li><a href="#">商品情報</a></li>
+					<li><a href="#">メールマガジン</a></li>
+					<li><a href="#">企業情報</a></li>
+					<li><a href="#">サポート</a></li>
+				</ul>
+			</nav>
+
+		</header>
+
+		<section>
+			<h2>企業情報<span>Corporate Profile</span></h2>
+
+			<!-- ここにテーブルを記述 -->
+			<table>
+				<colgroup>
+					<col width="280">
+					<col width="320">
+					<col width="2320">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>会社名</th>
+						<td>NEST株式会社</td>
+						<td>NEST corportation</td>
+					</tr>
+
+					<tr>
+						<th>設立日</th>
+						<td>N2014年 7月</td>
+						<td>July 12, 2014</td>
+					</tr>
+
+					<tr>
+						<th>所在地</th>
+						<td>
+							<b>本社</b><br>
+							000-0000<br>
+
+							東京オフィス<br>
+							000-0000
+						</td>
+						<td>
+							<b>Tokyo Office</b><br>
+							000-0000
+						</td>
+					</tr>
+
+					
+
+				</tbody>
+			</table>
+
+
+		</section>
+
+
+	</div>
+
+	<footer>
+		<p>COPYRIGHT 2015 FONTS.inc</p>
+	</footer>
+
+</body>
+</html>
