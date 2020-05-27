@@ -1,3 +1,27 @@
-ベクトルの考え方
-https://killing-time.work/2019/11/24/unity-vector3-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/
-http://gameworkslab.jp/2018/10/17/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%81%A8%E6%AD%A3%E8%A6%8F%E5%8C%96/
+マウスイベントを取得するための決まり文句的なもの
+Declare PtrSafe Function SetCursorPos Lib "user32" (ByVal x As Long, ByVal y As Long) As Long
+
+Declare PtrSafe Sub mouse_event Lib "user32" ( _
+    ByVal dwFlags As Long, _
+    Optional ByVal dx As Long = 0, _
+    Optional ByVal dy As Long = 0, _
+    Optional ByVal dwDate As Long = 0, _
+    Optional ByVal dwExtraInfo As Long = 0 _
+)
+
+Sub clickMouseLeft() '指定したポイントへ左クリックを実行
+
+'座標を設定。350はX軸（横方向） 270はY軸（縦方向）
+SetCursorPos 350, 270
+
+'左クリックの動作
+mouse_event 2
+mouse_event 4
+
+'解りやすいように秒を表示
+Range("E10") = Format(Now(), "mm:ss")
+
+'3秒後に再度実行
+Application.OnTime Now() + TimeValue("00:00:03"), "clickMouseLeft"
+
+End Sub
