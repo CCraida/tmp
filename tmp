@@ -1,27 +1,9 @@
-マウスイベントを取得するための決まり文句的なもの
-Declare PtrSafe Function SetCursorPos Lib "user32" (ByVal x As Long, ByVal y As Long) As Long
+https://www.atmarkit.co.jp/fcoding/index/js.html
 
-Declare PtrSafe Sub mouse_event Lib "user32" ( _
-    ByVal dwFlags As Long, _
-    Optional ByVal dx As Long = 0, _
-    Optional ByVal dy As Long = 0, _
-    Optional ByVal dwDate As Long = 0, _
-    Optional ByVal dwExtraInfo As Long = 0 _
-)
+https://www.javadrive.jp/javascript/
 
-Sub clickMouseLeft() '指定したポイントへ左クリックを実行
+https://crocro.com/write/manga_javascript/wiki.cgi
 
-'座標を設定。350はX軸（横方向） 270はY軸（縦方向）
-SetCursorPos 350, 270
+http://www.tohoho-web.com/js/
 
-'左クリックの動作
-mouse_event 2
-mouse_event 4
-
-'解りやすいように秒を表示
-Range("E10") = Format(Now(), "mm:ss")
-
-'3秒後に再度実行
-Application.OnTime Now() + TimeValue("00:00:03"), "clickMouseLeft"
-
-End Sub
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference
