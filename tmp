@@ -1,6 +1,11 @@
 https://github.com/ics-creative/js-code-recipe
-https://github.com/Anima8/password-generator
 
+
+OJT
+	https://github.com/Anima8/password-generator = パスワード自動生成
+	Excelファイルを右クリックして、各シート毎のファイルに分割するツールをPythonで作ってみた
+	pingツールを作った
+	
 /* 疲れにくいカラダの作り方    */
 原因↓
 ・テステストロン不足。やること
