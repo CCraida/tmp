@@ -66,13 +66,9 @@ OJT
 
 
 //flask//
-はじめての Flask #1 ~はじめてのウェブアプリ~
-はじめての Flask #2 ~POSTを受け取ろう~
-はじめての Flask #3 ~htmlをrenderしてみよう~
-はじめての Flask #4 ~データベースをSQLAlchemyでいじってみよう~
-はじめての Flask #5 ~JSONを返すWebAPIを書こう~
-
-//python flask参考「　記事
-https://news.mynavi.jp/series/zeropython/	マイナビニュース
-https://study-flask.readthedocs.io/ja/latest/02.html	
+https://3d-modely.com/blog/animation/rigging/
+https://virtualcast.jp/wiki/doku.php?id=unity:humanoid:introduction
+https://graphicalpoxy.hatenablog.com/entry/2019/06/15/140446
+https://rinor.hatenablog.com/entry/2015/05/21/193216
+Humanoidの3DモデルをQuaternionで直接動かす方法
 		
