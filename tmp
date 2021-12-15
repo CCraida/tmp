@@ -64,6 +64,24 @@ OJT
 	少しお腹に痛み、違和感
 	
 
+            Content holder = (Content)this.Master.FindControl("MainContent").FindControl("Content1");
+
+            Control myControl1 = FindControl("Content1");
+
+            ContentPlaceHolder MainContent = this.Master.FindControl("MainContent") as ContentPlaceHolder;
+            PlaceHolder aaaa = MainContent.FindControl("PlaceHolder1") as PlaceHolder;
+
+            aaaa.Controls.Add(new LiteralControl("<div>test</div>"));
+
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="fortest.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+    </div>
+
+</asp:Content>
+
 
 //flask//
 https://3d-modely.com/blog/animation/rigging/
