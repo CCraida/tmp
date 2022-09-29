@@ -90,3 +90,43 @@ https://graphicalpoxy.hatenablog.com/entry/2019/06/15/140446
 https://rinor.hatenablog.com/entry/2015/05/21/193216
 Humanoidの3DモデルをQuaternionで直接動かす方法
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+import os
+
+
+dir_path = "C:\\Users\\crowc\\Desktop\\tmp\\JS" 
+outStr = ""
+
+//出力対象のファイルがあれば消す
+is_file = os.path.isfile("C:\\Users\\crowc\\Desktop\\tmp\\JS\\test.txt")
+if is_file:
+    print('aaaaaaaaaaaaa')
+    os.remove("C:\\Users\\crowc\\Desktop\\tmp\\JS\\test.txt")
+
+//選択したディレクトリ配下のファイルを全てチェック
+for current_dir, sub_dirs, files_list in os.walk(dir_path): 
+    for file in files_list:
+        f = open(os.path.join(current_dir,file),encoding="shift_jis")
+        print(file)
+        for line in f:
+            outStr = outStr + line
+        outStr = outStr + "\n"
+
+
+//出力対象のファイルを作成し、書き込む
+f = open("C:\\Users\\crowc\\Desktop\\tmp\\JS\\test.txt", "w")
+f.write(outStr)
+f.close()
+
