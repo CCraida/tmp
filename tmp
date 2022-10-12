@@ -131,3 +131,4 @@ f.write(outStr)
 f.close()
 
 https://dev.to/bahmutov/12-recipes-for-testing-react-applications-using-cypress-react-unit-test-46g6#custom-hooks
+https://docs.cypress.io/guides/component-testing/events-react#Act
