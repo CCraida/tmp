@@ -136,3 +136,15 @@ https://chusotsu-program.com/react-usestate-array-push/
 https://ja.reactjs.org/docs/hooks-reference.html#usestate
 
 https://qiita.com/yoshii0110/items/3d9ec03215537646b65c
+
+
+
+data:[
+sensorId :
+value	:
+]
+
+
+data:[
+iot.Reava : "電源容量"
+]
