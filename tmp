@@ -130,5 +130,6 @@ f = open("C:\\Users\\crowc\\Desktop\\tmp\\JS\\test.txt", "w")
 f.write(outStr)
 f.close()
 
-https://dev.to/bahmutov/12-recipes-for-testing-react-applications-using-cypress-react-unit-test-46g6#custom-hooks
-https://docs.cypress.io/guides/component-testing/events-react#Act
+https://zenn.dev/marimoofficial/articles/cbe0e90577c41e
+https://qiita.com/chihiro/items/eb8c7b2ceee5274a4a8f
+https://chusotsu-program.com/react-usestate-array-push/
