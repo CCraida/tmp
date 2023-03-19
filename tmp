@@ -1,5 +1,17 @@
 https://github.com/ics-creative/js-code-recipe
 
+// Generates a Checksum
+// EXAMPLE: Input="Hello World!!" -> Output="5E"
+public static string GenerateChecksum(string input)
+{
+    byte[] bytes = Encoding.ASCII.GetBytes(input);
+    byte result = 0;
+    foreach (byte c in bytes)
+        result += c;
+    result &= 0xff;
+    return result.ToString("X2");
+}
+
 
 OJT
 	https://github.com/Anima8/password-generator = パスワード自動生成
