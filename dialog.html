@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>JavaScript本格入門</title>
+<link rel="stylesheet" href="dialogStyle.css">
+
+</head>
+<body>
+
+    <button id="open-modal" type="button">Show me the modal</button>
+
+    <dialog id="demo-modal">
+      <h3 class="modal-header">A native modal dialog box</h3>
+      <div class="modal-body">
+        <p>Finally, HTML has a native dialog box element! This is fantastic.</p>
+        <p>And a polyfill makes this usable today.</p>
+      </div>
+      <footer class="modal-footer">
+        <button class="like-it" type="button">I like it</button>
+        <button class="love-it" type="button">I love it</button>
+      </footer>
+      <button id="close" class="close" type="button">&times;</button>
+    </dialog>
+   
+    
+
+
+    <script>
+        const modal = document.getElementById('demo-modal');
+        const open = document.getElementById('open-modal');
+        const close = document.getElementById('close');
+        const likeIt = document.getElementById('like-it');
+        const loveIt = document.getElementById('love-it');
+        const returnSpan = document.getElementById('return-value');
+        
+        
+// "Update details" button opens the <dialog> modally
+    open.addEventListener('click', function onOpen() {
+  if (typeof modal.showModal === "function") {
+    // modal.showModal();
+    modal.show();
+
+  } else {
+    alert("The <dialog> API is not supported by this browser");
+  }
+
+
+  // キャンセルボタンが押されたときの処理
+  modal.querySelector('.like-it').addEventListener('click', () => {
+    modal.close('キャンセル');
+});
+ 
+// 実行ボタンが押されたときの処理
+modal.querySelector('.love-it').addEventListener('click', () => {
+    modal.close('実行');
+});
+ 
+// ダイアログが閉じられた時の処理
+modal.addEventListener('close', (event) => {
+  const res = document.getElementById('res-3');
+  res.textContent = event.target.returnValue;
+});
+});
+
+        </script>
+</body>
+</html>
