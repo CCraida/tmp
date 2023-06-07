@@ -1,84 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>JavaScript本格入門</title>
-<style type="text/css">
-    /* .fadeout{
-    opacity: 0;
-    transition: 0.5s ease-in-out;
-    -webkit-transition: 0.5s ease-in-out;
-    }
-    .fadein{
-    opacity: 1;
-    transition: 0.5s ease-in-out;
-    -webkit-transition: 0.5s ease-in-out;
-    } */
-    </style>
-    <script type="text/javascript"><!--
-    function myAlert(myTitle, myMessage){
-        // タイトルとメッセージをセットする
-        myMessage = myMessage.replace(/\n/g, "<BR>");
-        document.getElementById("idAlertTitle").innerHTML = myTitle;
-        document.getElementById("idAlertMessage").innerHTML = myMessage;
-    
-        // いったん上端に移動する
-        myY = (window.innerHeight !== undefined) ? window.innerHeight : document.body.clientHeight;
-        document.getElementById("idAlert").style.top = myY/2*(-1);
-    
-        // 中央に移動する
-        myXs = document.body.scrollLeft;	
-        myYs = document.body.scrollTop;
-        myX = (window.innerWidth !== undefined) ? window.innerWidth : document.body.clientWidth;
-        myY = (window.innerHeight !== undefined) ? window.innerHeight : document.body.clientHeight;
-        document.getElementById("idAlert").style.left = myX / 2 - (myX/2/2) + myXs;
-        document.getElementById("idAlert").style.top = myY / 2 - (myY/2/2) + myYs;
-    
-        // 警告画面を表示
-        document.getElementById("idAlert").style.visibility = "visible";
-    
-        // フェードイン
-        document.getElementById("idAlert").className = "fadein";
-    }
-    function myAlertClose(){
-        // 上端に移動する
-        myY = (window.innerHeight !== undefined) ? window.innerHeight : document.body.clientHeight;
-        document.getElementById("idAlert").style.top = myY/2*(-1);
-    
-        // フェードアウト
-        document.getElementById("idAlert").className = "fadeout";
-    
-        // 警告画面を隠す
-        document.getElementById("idAlert").style.visibility = "hidden";
-    }
-    // --></script>
-    <div id="idAlert" class="fadeout" style="background-color:#FFFFFF; visibility:hidden; position:absolute; border-width:thick; border-style:ridge; width:50%; box-shadow:10px 10px 10px rgba(0,0,0,0.5); border-radius:10px;">
-        <div style="float:right"><div onclick="myAlertClose()"><img src="close03-001.png"></div></div>
-        <div id="idAlertTitle" style="background-color:#C0C0C0; text-align:center; padding:10px 0px; border-radius:5px 5px 0px 0px;"></div>
-        <div style="margin:20px 20px 0px 0px;">
-            <div style="display:table; float:left; width:100px; height:100px;"><p style="display:table-cell;vertical-align:middle;text-align:center;"><img   src="alert01-004-48.png"></p></div>
-            <div style="display:table; height:100px;"><div id="idAlertMessage" style="display:table-cell;vertical-align:middle;"></div></div>
-        </div>
-        <div style="padding:10px 0px; text-align:center;">
-        <input style="border-radius:5px; font-size:large; width:100px;" type="button" value="O K" onclick="myAlertClose()">
-        </div>
-    </div>
-    
+    <!-- Created by Rizowan Ahmed Safi -->
+    <!-- website - www.rizowanahmedsafi.com  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Draggable Modal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="idAlert" class="fadeout" style="background-color:#FFFFFF; visibility:hidden; position:absolute; border-width:thick; border-style:ridge; width:50%; box-shadow:10px 10px 10px rgba(0,0,0,0.5); border-radius:10px;">
-        <div style="float:right">
-            <div onclick="myAlertClose()"><img src="close03-001.png">
-        q</div></div>
-        <div id="idAlertTitle" style="background-color:#C0C0C0; text-align:center; padding:10px 0px; border-radius:5px 5px 0px 0px;"></div>
-        <div style="margin:20px 20px 0px 0px;">
-        <div style="display:table; float:left; width:100px; height:100px;"><p style="display:table-cell;vertical-align:middle;text-align:center;"><img src="alert01-004-48.png"></p></div>
-        <div style="display:table; height:100px;"><div id="idAlertMessage" style="display:table-cell;vertical-align:middle;"></div></div>
-        </div>
-        <div style="padding:10px 0px; text-align:center;">
-        <input style="border-radius:5px; font-size:large; width:100px;" type="button" value="O K" onclick="myAlertClose()">
+    <div class="cointainer">
+        <h1>Draggable Modal</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sed iure veniam hic libero atque pariatur voluptate quaerat commodi, explicabo quam quidem harum veritatis? Quo aperiam aliquid sed eaque? Quae maxime amet repellendus, nesciunt nam fuga dolor, temporibus dolores facilis ratione commodi hic quod officiis mollitia cum reiciendis iure veniam distinctio nulla? Quidem asperiores laboriosam harum nisi voluptatibus amet obcaecati doloribus distinctio error iste. Doloremque ea iste fugit ullam et ex quasi odit rerum, officiis dolor voluptatem quibusdam! Mollitia accusamus laborum modi, quam ducimus debitis. Illum delectus, expedita neque repudiandae incidunt illo laudantium reprehenderit eaque vel accusantium cupiditate laboriosam dolorem distinctio possimus, deleniti perspiciatis voluptatem non omnis vitae voluptas, animi optio voluptate? Optio nam earum ea possimus esse deleniti assumenda animi voluptas magni illo, suscipit eveniet corrupti amet deserunt ullam. Autem dolorem consequatur aut maiores explicabo sint rem harum ipsam dolores sapiente voluptatem ad natus debitis atque obcaecati est rerum velit accusantium fugiat, unde error sunt fuga, odit provident! Ducimus, voluptas unde tempora architecto illum perspiciatis commodi beatae fugiat fuga distinctio rem eligendi incidunt alias quam cupiditate eius accusamus omnis earum temporibus, labore iure culpa corporis iste quidem! Dicta quo exercitationem adipisci earum nisi tenetur culpa non a, velit distinctio.</p>
+        <br>
+        <a href="#">Learn More</a>
+    </div>
+    <div class="modal">
+        <div class="modal-body">
+            <span>&times;</span>
+            <h3>Draggable Modal</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus sit vero, in iste quae saepe dolorem ea aliquid dolore odit officiis nihil quasi voluptate quidem, eos voluptates iure cum ducimus rerum deleniti ut expedita eaque doloribus! Ab exercitationem commodi magnam laboriosam voluptates enim totam inventore consequuntur necessitatibus, dolores illum voluptate!</p>
         </div>
     </div>
-    <input type="button" value="メッセージを表示する" onclick="myAlert( 'だめよ' , 'だめ\nだめ' )">
+
+    <script>
+        let modal = document.querySelector('.modal');
+        let modalBody = document.querySelector('.modal-body');
+        let openModal = document.querySelector('.cointainer a');
+        let closeModal = document.querySelector('.modal-body span');
+
+        openModal.onclick = ()=> {
+            modal.style.display = 'block';
+        }
+        closeModal.onclick = ()=> {
+            modal.style.display = 'none';
+        }
+
+        function onDrag({movementX , movementY}){
+            let getStyle = window.getComputedStyle(modal);
+            let leftValue = parseInt(getStyle.left);
+            let topValue = parseInt(getStyle.top);
+
+            modal.style.left = `${leftValue + movementX}px`;
+            modal.style.top = `${topValue + movementY}px`;
+        }
+        modal.addEventListener('mousedown', ()=> {
+            modalBody.style.cursor = 'all-scroll';
+            modalBody.addEventListener('mousemove', onDrag);
+        })
+
+        document.addEventListener('mouseup', ()=> {
+            modalBody.style.cursor = 'default';
+            modalBody.removeEventListener('mousemove', onDrag);
+        })
+    </script>
 </body>
 </html>
