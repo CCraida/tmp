@@ -1,157 +1,42 @@
-https://github.com/ics-creative/js-code-recipe
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>ラジオボタンname属性変更</title>
+    <h:outputScript>
+        // JavaScriptでラジオボタンのname属性を変更する関数
+        function updateRadioButtonNames() {
+            // テーブル内のすべてのラジオボタンを取得
+            const radios = document.querySelectorAll('#radioTable input[type="radio"]');
 
-// Generates a Checksum
-// EXAMPLE: Input="Hello World!!" -> Output="5E"
-public static string GenerateChecksum(string input)
-{
-    byte[] bytes = Encoding.ASCII.GetBytes(input);
-    byte result = 0;
-    foreach (byte c in bytes)
-        result += c;
-    result &= 0xff;
-    return result.ToString("X2");
-}
+            // 各ラジオボタンのname属性をカスタム値に設定
+            radios.forEach((radio, index) => {
+                radio.name = 'customRadioName_' + Math.floor(index / 2);
+            });
+        }
 
+        // ページ読み込み後に実行
+        window.addEventListener('load', updateRadioButtonNames);
+    </h:outputScript>
+</h:head>
+<h:body>
+    <h:form>
+        <p:dataTable value="#{radioTableBean.items}" var="item" id="radioTable">
+            <p:column>
+                <f:facet name="header">選択</f:facet>
+                <h:selectOneRadio value="#{item.selected}">
+                    <f:selectItem itemValue="true" />
+                </h:selectOneRadio>
+            </p:column>
 
-OJT
-	https://github.com/Anima8/password-generator = パスワード自動生成
-	Excelファイルを右クリックして、各シート毎のファイルに分割するツールをPythonで作ってみた
-	pingツールを作った
-	
-/* 疲れにくいカラダの作り方    */
-原因↓
-・テステストロン不足。やること
-	1.体脂肪を減らして、筋肉を増やす
-		目安として体脂肪率10%〜15%
-		タンパク質は体重1kgあたり1.6gでテステステロンMAX      ex)体重50なら80ぐらい
-		おすすめはホエイプロテイン、なるべく　				
-	2.睡眠を増やす
-		睡眠時間1時間毎にテステステロン15%増加
+            <p:column>
+                <f:facet name="header">番号</f:facet>
+                <h:outputText value="#{item.number}" />
+            </p:column>
+        </p:dataTable>
 
-	3.競争する環境、挑戦すること(数字でわかること)に身をおく
-
-	4.筋トレ　ex)バーピー
-
-	5.コーヒーを飲む
-		一日240mgのカフェイン14%ほどテステステロンが上がる。 Ex)カップコーヒーで２杯ぐらい
-
-	6.水飲む
-
-	7.HIITをする。	ex)バーピー
-
-	8.ホスファチジルセリンをサプリで摂取する。(Nowfoodsのやつとか)
-
-	9.アシュファガンダを摂取する。
-
-	10.ブロメダインを摂取する。	(パイナップルとかに入ってるよ)
-
-	11.クレアチンを摂取する。
-		筋トレ向け、テステステロンup効果、一日5gで20%ぐらいup
-	
-	12.腸内環境を整える。
-
-	13.亜鉛をとる	ex)亜鉛トローチ
-
-	14.マグネシウム	ex)ナイトレストを摂取する。
-
-	15.ビタミンD
-
-・やってはいけないこと
-	1.ストレスケア
-
-	2.お酒飲みすぎ
-
-	3.サラダ油と加工品(ハム)とかやめる
-
-	4.豆をやめる
-
-	5.トレーニングしすぎ
-		
-
-
-一日目
-	夕方に接種
-二日目
-	前日夕方に接種、朝にコーシー一杯
-	少しお腹に痛み、違和感
-	
-
-            Content holder = (Content)this.Master.FindControl("MainContent").FindControl("Content1");
-
-            Control myControl1 = FindControl("Content1");
-
-            ContentPlaceHolder MainContent = this.Master.FindControl("MainContent") as ContentPlaceHolder;
-            PlaceHolder aaaa = MainContent.FindControl("PlaceHolder1") as PlaceHolder;
-
-            aaaa.Controls.Add(new LiteralControl("<div>test</div>"));
-
-
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="fortest.WebForm1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
-        <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-    </div>
-
-</asp:Content>
-
-
-//flask//
-https://3d-modely.com/blog/animation/rigging/
-https://virtualcast.jp/wiki/doku.php?id=unity:humanoid:introduction
-https://graphicalpoxy.hatenablog.com/entry/2019/06/15/140446
-https://rinor.hatenablog.com/entry/2015/05/21/193216
-Humanoidの3DモデルをQuaternionで直接動かす方法
-		
-
-
-
-https://qiita.com/kmagai/items/95481a3b9fd97e4616c9
-https://freelance-jak.com/technology/react/1620/
-https://amateur-engineer.com/react-usestate-object-update/
-https://webcache.googleusercontent.com/search?q=cache:l6OaLC-MmMcJ:https://codelikes.com/react-use-state/&cd=1&hl=ja&ct=clnk&gl=jp
-
-
-
-
-
-
-import os
-
-
-dir_path = "C:\\Users\\crowc\\Desktop\\tmp\\JS" 
-outStr = ""
-
-//出力対象のファイルがあれば消す
-is_file = os.path.isfile("C:\\Users\\crowc\\Desktop\\tmp\\JS\\test.txt")
-if is_file:
-    print('aaaaaaaaaaaaa')
-    os.remove("C:\\Users\\crowc\\Desktop\\tmp\\JS\\test.txt")
-
-//選択したディレクトリ配下のファイルを全てチェック
-for current_dir, sub_dirs, files_list in os.walk(dir_path): 
-    for file in files_list:
-        f = open(os.path.join(current_dir,file),encoding="shift_jis")
-        print(file)
-        for line in f:
-            outStr = outStr + line
-        outStr = outStr + "\n"
-
-
-//出力対象のファイルを作成し、書き込む
-f = open("C:\\Users\\crowc\\Desktop\\tmp\\JS\\test.txt", "w")
-f.write(outStr)
-f.close()
-
-https://zenn.dev/marimoofficial/articles/cbe0e90577c41e
-https://qiita.com/chihiro/items/eb8c7b2ceee5274a4a8f
-https://chusotsu-program.com/react-usestate-array-push/
-https://ja.reactjs.org/docs/hooks-reference.html#usestate
-
-https://qiita.com/yoshii0110/items/3d9ec03215537646b65c
-https://53ningen.com/appsync-subscription
-
-
-/** React学習サイト参考 */
-・https://ja.reactjs.org/
-・https://newsite-make.com/react-study/#i-3
-/**********************/
+        <h:commandButton value="送信" action="#{radioTableBean.submit}" />
+    </h:form>
+</h:body>
+</html>
