@@ -1,42 +1,154 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-<h:head>
-    <title>ラジオボタンname属性変更</title>
-    <h:outputScript>
-        // JavaScriptでラジオボタンのname属性を変更する関数
-        function updateRadioButtonNames() {
-            // テーブル内のすべてのラジオボタンを取得
-            const radios = document.querySelectorAll('#radioTable input[type="radio"]');
+"use client";
 
-            // 各ラジオボタンのname属性をカスタム値に設定
-            radios.forEach((radio, index) => {
-                radio.name = 'customRadioName_' + Math.floor(index / 2);
-            });
-        }
+import { useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
-        // ページ読み込み後に実行
-        window.addEventListener('load', updateRadioButtonNames);
-    </h:outputScript>
-</h:head>
-<h:body>
-    <h:form>
-        <p:dataTable value="#{radioTableBean.items}" var="item" id="radioTable">
-            <p:column>
-                <f:facet name="header">選択</f:facet>
-                <h:selectOneRadio value="#{item.selected}">
-                    <f:selectItem itemValue="true" />
-                </h:selectOneRadio>
-            </p:column>
+export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-            <p:column>
-                <f:facet name="header">番号</f:facet>
-                <h:outputText value="#{item.number}" />
-            </p:column>
-        </p:dataTable>
+  const onSubmit = (data) => {
+    alert(`送信データ: ${JSON.stringify(data, null, 2)}`);
+  };
 
-        <h:commandButton value="送信" action="#{radioTableBean.submit}" />
-    </h:form>
-</h:body>
-</html>
+  return (
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
+      <div className="w-full max-w-2xl p-6 rounded-lg">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <Card className="border border-gray-300 relative space-y-6">
+            <div className="absolute top-0 left-0 w-full h-1 bg-blue-500 rounded-t-md"></div>
+            <CardContent className="p-4">
+              <h1 className="text-2xl font-bold mb-4 text-purple-800">イベント参加フォーム</h1>
+              <p className="text-gray-700">内容: ○○に関するイベント</p>
+              <p className="text-gray-700">日程: ○月×日○時</p>
+              <p className="text-gray-700">会場: A</p>
+              <p className="text-gray-700">参加費: △円</p>
+            </CardContent>
+          </Card>
+         
+
+         {/* メールアドレス */}
+         <Card>
+            <CardContent className="p-4">
+              <Label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-2">
+                メールアドレス
+              </Label>
+              <Input type="email" id="email" {...register("email", { required: "メールアドレスは必須です" })} />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+            </CardContent>
+          </Card>
+
+          {/* 撮影会状況 */}
+          <Card>
+            <CardContent className="p-4">
+              <Label htmlFor="situ" className="block text-lg font-medium text-gray-700 mb-2">
+                撮影会状況
+              </Label>
+              <p className="text-gray-700">内容: ○○に関するイベント</p>
+              <p className="text-gray-700">日程: ○月×日○時</p>
+              <p className="text-gray-700">会場: A</p>
+              <p className="text-gray-700">参加費: △円</p>
+            </CardContent>
+          </Card>
+
+
+          {/* TwitterID */}
+          <Card className="border border-gray-300 relative">
+            <CardContent className="p-4">
+              <Label htmlFor="twitterId" className="block text-lg font-medium text-gray-700 mb-2">
+                Twitter ID
+              </Label>
+              <Input id="name" {...register("name", { required: "名前は必須です" })} />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+            </CardContent>
+          </Card>
+          
+          {/* 氏名 */}
+          <Card>
+            <CardContent className="p-4">
+              <Label htmlFor="userName" className="block text-lg font-medium text-gray-700 mb-2">
+                氏名
+              </Label>
+              <Input type="text" id="userName" {...register("email", { required: "メールアドレスは必須です" })} />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+            </CardContent>
+          </Card>
+
+          {/* 電話番号 */}
+          <Card>
+            <CardContent className="p-4">
+              <Label htmlFor="phoneNo" className="block text-lg font-medium text-gray-700 mb-2">
+                電話番号
+              </Label>
+              <Input type="text" id="phoneNo" {...register("email", { required: "メールアドレスは必須です" })} />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+            </CardContent>
+          </Card>
+
+          {/* 希望衣装 */}
+          <Card>
+            <CardContent className="p-4">
+              <Label className="block text-lg font-medium text-gray-700 mb-2">好きなプログラミング言語は？</Label>
+              <RadioGroup {...register("choice", { required: "選択は必須です" })} className="space-y-3">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="javascript" id="javascript" />
+                  <Label htmlFor="javascript">JavaScript</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="python" id="python" />
+                  <Label htmlFor="python">Python</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="typescript" id="typescript" />
+                  <Label htmlFor="typescript">TypeScript</Label>
+                </div>
+              </RadioGroup>
+              {errors.choice && <p className="text-red-500 text-sm mt-1">{errors.choice.message}</p>}
+            </CardContent>
+          </Card>
+
+          {/* 枠 */}
+
+          {/* オプション */}
+
+          {/* キャンセル料の規約確認 */}
+
+          {/* 参加規約 */}
+
+          {/* 連絡方法*/}
+
+          {/* 質問 */}
+          <Card>
+            <CardContent className="p-4">
+              <Label htmlFor="qa" className="block text-lg font-medium text-gray-700 mb-2">
+                質問
+              </Label>
+              <Textarea id="qa" {...register("feedback")} rows={4} />
+            </CardContent>
+          </Card>
+
+          {/* 名前 */}
+
+
+ 
+
+
+
+          {/* 送信ボタン */}
+          <div className="flex justify-center">
+            <Button type="submit" className="w-40">送信</Button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
